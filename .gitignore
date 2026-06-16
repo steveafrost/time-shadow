@@ -1,34 +1,20 @@
-# OS
-.DS_Store
-*.swp
-*.swo
-*~
-
-# Xcode
-*.xcworkspace
-xcuserdata/
-DerivedData/
-*.xcodeproj/project.xcworkspace/
+## Xcode
+*.xcworkspace/xcuserdata/
 *.xcodeproj/xcuserdata/
+*.xcodeproj/project.xcworkspace/xcuserdata/
+DerivedData/
+*.xcuserstate
 
-# Swift Package Manager
-.packages/
+## Swift Package Manager
 .build/
 Package.resolved
 
-# CocoaPods
-Pods/
+## macOS
+.DS_Store
+*.swp
+*.swo
 
-# Fastlane
-fastlane/report.xml
-fastlane/Preview.html
-fastlane/screenshots/
-fastlane/test_output/
-
-# Carthage
-Carthage/Build/
-
-# App
-*.app
-*.dSYM.zip
-*.dSYM
+## Environment
+.env
+.env.local
+*.xcconfig
