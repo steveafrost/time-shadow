@@ -1,0 +1,34 @@
+# OS
+.DS_Store
+*.swp
+*.swo
+*~
+
+# Xcode
+*.xcworkspace
+xcuserdata/
+DerivedData/
+*.xcodeproj/project.xcworkspace/
+*.xcodeproj/xcuserdata/
+
+# Swift Package Manager
+.packages/
+.build/
+Package.resolved
+
+# CocoaPods
+Pods/
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/
+fastlane/test_output/
+
+# Carthage
+Carthage/Build/
+
+# App
+*.app
+*.dSYM.zip
+*.dSYM
