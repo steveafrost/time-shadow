@@ -177,11 +177,13 @@ For the widget extension target:
 
 ### 4. App Store Connect Setup
 
-- Create the app record
-- Create the Pro non-consumable IAP product
-- Set up App Group capabilities
-- Configure Live Activities entitlement
-- Upload screenshots showing the ambient view
+See [`APP_STORE_CONNECT.md`](APP_STORE_CONNECT.md) for the full App Store Connect preparation guide, including:
+
+- App record details (bundle ID, SKU, pricing)
+- Screenshot requirements and suggestions
+- In-App Purchase configuration
+- Privacy details
+- Distribution checklist
 
 ### 5. Feature Status
 

@@ -159,7 +159,7 @@ struct StatsView: View {
         let hours = minutes / 60
         let mins = minutes % 60
         if hours > 0 {
-            return "\(h)h \(mins)m"
+            return "\(hours)h \(mins)m"
         }
         return "\(mins)m"
     }

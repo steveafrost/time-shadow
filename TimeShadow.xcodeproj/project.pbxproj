@@ -7,135 +7,137 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BLD_13E3436B3D0643A380F2454F /* App/ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = REF_246AF262EF044263BA96C485 /* App/ContentView.swift */; };
-		BLD_7346587DE2214AE9971E3D21 /* App/TimeShadowApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = REF_ED721D9AD9E64104984E73FB /* App/TimeShadowApp.swift */; };
-		BLD_4004D8E02ACE4C4D9B8B78EA /* Models/ProUnlockManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = REF_825673816DBB490D9D6CE1C8 /* Models/ProUnlockManager.swift */; };
-		BLD_2F8CDC20922B4277AB4D105D /* Models/ShadowTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = REF_3CAE89482D234BE3B6270512 /* Models/ShadowTheme.swift */; };
-		BLD_AAF098877DD64BFEBB2AE934 /* Models/TimerPreset.swift in Sources */ = {isa = PBXBuildFile; fileRef = REF_F4961A5457204629862AB7A2 /* Models/TimerPreset.swift */; };
-		BLD_59084959D54040809F60FC53 /* Models/TimerSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = REF_A393510C94E141ACBDB99C32 /* Models/TimerSession.swift */; };
-		BLD_9293D46DB5894597A4AD0405 /* Services/AnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = REF_C8BA217A308E4BA99DE2DB44 /* Services/AnalyticsService.swift */; };
-		BLD_B613D6AAA4124DF18A53C101 /* Services/HapticService.swift in Sources */ = {isa = PBXBuildFile; fileRef = REF_9EC99E736C004197B588F577 /* Services/HapticService.swift */; };
-		BLD_0DA60F0E1781461E8EBA55F0 /* Services/LiveActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = REF_17D7B524EC0749829A18E452 /* Services/LiveActivityManager.swift */; };
-		BLD_BB8B5989300E46A1904B0E30 /* Services/ShadowRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = REF_4DBD2296F7144525B2E2EAD9 /* Services/ShadowRenderer.swift */; };
-		BLD_129F7BB98CDA4790811189D5 /* Services/StoreKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = REF_32CFEA11BD0844F18250839B /* Services/StoreKitManager.swift */; };
-		BLD_1E12F730BCC74D63AD6C012B /* Services/TimerEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = REF_9B76C70ECADE4F569CFDE772 /* Services/TimerEngine.swift */; };
-		BLD_E4E8D7F79E90495BBA52BAA7 /* Services/WidgetDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = REF_FB2535E3F9B94CDCA0D1BAD6 /* Services/WidgetDataProvider.swift */; };
-		BLD_5C3D96B96E094896927BF07C /* Views/ActiveTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = REF_B5217B7F1E1643249F22B961 /* Views/ActiveTimerView.swift */; };
-		BLD_150A0AF3DD754CE08C1453C8 /* Views/CompletionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = REF_21091EFBA2A241F5A415806C /* Views/CompletionView.swift */; };
-		BLD_445A7946A3B44FCD9505FA1C /* Views/PresetPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = REF_056C532F1429490C8E670C7B /* Views/PresetPickerView.swift */; };
-		BLD_0A7109AB551941C787401B8E /* Views/ProUpgradeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = REF_85B982DDA0F543128AF704C4 /* Views/ProUpgradeView.swift */; };
-		BLD_43D3E76335A440B484F28781 /* Views/SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = REF_40E22031D2D94FA0B88CC50C /* Views/SettingsView.swift */; };
-		BLD_0F31924716B04B98AFCE0F0A /* Views/StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = REF_EE675EABB1D344C3A27D3667 /* Views/StatsView.swift */; };
-		BLD_C5F1849005FA4F3690CC5CD4 /* Views/ThemePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = REF_CB3290D9B17B435C91A28EF8 /* Views/ThemePickerView.swift */; };
-		BLD_41A184E6F4074212BB720301 /* Views/TimerSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = REF_8DB73EB45010471EA9DCADED /* Views/TimerSetupView.swift */; };
-		BLD_5B6A958EE90F4E889246FDFD /* Widgets/TimerWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = REF_E1767BCB59CA4C299E7F9B60 /* Widgets/TimerWidget.swift */; };
-		BLD_70130E0856A94F679CE8A6F9 /* Widgets/WidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = REF_79B79D1F1B5E4FF09B61460A /* Widgets/WidgetBundle.swift */; };
+		BLD_B0C942B3433642918D270C2A /* App/ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = REF_077F649D21664CE4873AA234 /* App/ContentView.swift */; };
+		BLD_FC6CE8F93A00490AB191CE7E /* App/TimeShadowApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = REF_BB63F177D69249D4A57ABFE8 /* App/TimeShadowApp.swift */; };
+		BLD_5243A963491C4960B24BC65A /* Models/ProUnlockManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = REF_5BFEDC9625324FA293FE0A8B /* Models/ProUnlockManager.swift */; };
+		BLD_2A74D8C9B80F48E493A1C36B /* Models/ShadowTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = REF_58FF80D2AE8C4587A9691DD2 /* Models/ShadowTheme.swift */; };
+		BLD_ADD9F14AC7454EDEB33B698C /* Models/TimerPreset.swift in Sources */ = {isa = PBXBuildFile; fileRef = REF_52898A556F524EFE9DC37883 /* Models/TimerPreset.swift */; };
+		BLD_DEF9AFBE511B42A386C1ACD2 /* Models/TimerSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = REF_2E48691DD1AA47CE9372256A /* Models/TimerSession.swift */; };
+		BLD_CE62FE1ADB544908A43CF2BD /* Services/AnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = REF_0B9DAE9FBA73489995350002 /* Services/AnalyticsService.swift */; };
+		BLD_56E2568DD3224332A48E8072 /* Services/HapticService.swift in Sources */ = {isa = PBXBuildFile; fileRef = REF_5FBAF6CF6CD148BAB0317A2A /* Services/HapticService.swift */; };
+		BLD_5A6A935CF6554D6299331EA7 /* Services/LiveActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = REF_630A86038AFB41E087DF0432 /* Services/LiveActivityManager.swift */; };
+		BLD_77CC9612D7314D93BD7D5E8E /* Services/ShadowRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = REF_EF8BFC3B12EF4FA299A3580C /* Services/ShadowRenderer.swift */; };
+		BLD_541D130AD69B4A008AF51411 /* Services/StoreKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = REF_39E20E18B49C4EC791815DF1 /* Services/StoreKitManager.swift */; };
+		BLD_54D97C29948E4632A10404B8 /* Services/TimerEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = REF_832D6DCB4627489F900987A5 /* Services/TimerEngine.swift */; };
+		BLD_DD11987DDC7842CCB3726965 /* Services/WidgetDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = REF_A582F271025E4024B2632C7B /* Services/WidgetDataProvider.swift */; };
+		BLD_B9771207ED66441EAF433064 /* Views/ActiveTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = REF_A5750EDF1E38452C98DAF876 /* Views/ActiveTimerView.swift */; };
+		BLD_8DC86AC246C641E99D8B67D2 /* Views/CompletionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = REF_0B7A9EEA334644088AE61F93 /* Views/CompletionView.swift */; };
+		BLD_D74F5A44619B4C66BDBF6F51 /* Views/PresetPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = REF_E2791CCA25344BCABAD09236 /* Views/PresetPickerView.swift */; };
+		BLD_E6A70FEC77CB4134B49A606A /* Views/ProUpgradeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = REF_7CE7B1394A7046329E18BC54 /* Views/ProUpgradeView.swift */; };
+		BLD_374C751A4B9C4147A93853C3 /* Views/SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = REF_CA7992DA9270447B9B16BD4D /* Views/SettingsView.swift */; };
+		BLD_47E9F8E8AC11444994622D4F /* Views/StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = REF_7E221E327FE24A43A688777F /* Views/StatsView.swift */; };
+		BLD_2EC307C76C4E48AA97C306BC /* Views/ThemePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = REF_17F75B3EA65E445681CA07E3 /* Views/ThemePickerView.swift */; };
+		BLD_C5BF83E20FF947D496362B6B /* Views/TimerSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = REF_71BF1635BACF49CE9DB892B9 /* Views/TimerSetupView.swift */; };
+		BLD_42756E45DC6E4AE4A9A5B89A /* Widgets/TimerWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = REF_633E9D17BCCA4227848F46A1 /* Widgets/TimerWidget.swift */; };
+		BLD_2629075B95B74977A1C7EB81 /* Widgets/WidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = REF_89DFCCD6F1924B40A4FDD45D /* Widgets/WidgetBundle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		REF_C49C4C310EC8492F8E187DDA /* .gitignore */ = {isa = PBXFileReference;; lastKnownFileType = text; path = ".gitignore"; sourceTree = "<group>"; };
-		REF_56306697ED0944A5B44BB1A9 /* AGENTS.md */ = {isa = PBXFileReference;; lastKnownFileType = text; path = "AGENTS.md"; sourceTree = "<group>"; };
-		REF_246AF262EF044263BA96C485 /* ContentView.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
-		REF_ED721D9AD9E64104984E73FB /* TimeShadowApp.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
-		REF_825673816DBB490D9D6CE1C8 /* ProUnlockManager.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
-		REF_3CAE89482D234BE3B6270512 /* ShadowTheme.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
-		REF_F4961A5457204629862AB7A2 /* TimerPreset.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
-		REF_A393510C94E141ACBDB99C32 /* TimerSession.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
-		REF_C8BA217A308E4BA99DE2DB44 /* AnalyticsService.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
-		REF_9EC99E736C004197B588F577 /* HapticService.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
-		REF_17D7B524EC0749829A18E452 /* LiveActivityManager.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
-		REF_4DBD2296F7144525B2E2EAD9 /* ShadowRenderer.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
-		REF_32CFEA11BD0844F18250839B /* StoreKitManager.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
-		REF_9B76C70ECADE4F569CFDE772 /* TimerEngine.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
-		REF_FB2535E3F9B94CDCA0D1BAD6 /* WidgetDataProvider.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
-		REF_B5217B7F1E1643249F22B961 /* ActiveTimerView.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
-		REF_21091EFBA2A241F5A415806C /* CompletionView.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
-		REF_056C532F1429490C8E670C7B /* PresetPickerView.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
-		REF_85B982DDA0F543128AF704C4 /* ProUpgradeView.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
-		REF_40E22031D2D94FA0B88CC50C /* SettingsView.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
-		REF_EE675EABB1D344C3A27D3667 /* StatsView.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
-		REF_CB3290D9B17B435C91A28EF8 /* ThemePickerView.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
-		REF_8DB73EB45010471EA9DCADED /* TimerSetupView.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
-		REF_E1767BCB59CA4C299E7F9B60 /* TimerWidget.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
-		REF_79B79D1F1B5E4FF09B61460A /* WidgetBundle.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
-		PROD_REF_1F34870D959A4C6890B3A42F /* TimeShadow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TimeShadow.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		REF_ENTITLEMENTS_D9E8F7A6B5C4D3E2F1A0B9C8D7 /* TimeShadow.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "TimeShadow.entitlements"; sourceTree = "<group>"; };
+		REF_75615695413A4FD597223F3B /* .gitignore */ = {isa = PBXFileReference;; lastKnownFileType = text; path = ".gitignore"; sourceTree = "<group>"; };
+		REF_6252C83ADE9B444F9FA7DADD /* AGENTS.md */ = {isa = PBXFileReference;; lastKnownFileType = text; path = "AGENTS.md"; sourceTree = "<group>"; };
+		REF_077F649D21664CE4873AA234 /* ContentView.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
+		REF_BB63F177D69249D4A57ABFE8 /* TimeShadowApp.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
+		REF_5BFEDC9625324FA293FE0A8B /* ProUnlockManager.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
+		REF_58FF80D2AE8C4587A9691DD2 /* ShadowTheme.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
+		REF_52898A556F524EFE9DC37883 /* TimerPreset.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
+		REF_2E48691DD1AA47CE9372256A /* TimerSession.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
+		REF_0B9DAE9FBA73489995350002 /* AnalyticsService.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
+		REF_5FBAF6CF6CD148BAB0317A2A /* HapticService.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
+		REF_630A86038AFB41E087DF0432 /* LiveActivityManager.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
+		REF_EF8BFC3B12EF4FA299A3580C /* ShadowRenderer.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
+		REF_39E20E18B49C4EC791815DF1 /* StoreKitManager.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
+		REF_832D6DCB4627489F900987A5 /* TimerEngine.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
+		REF_A582F271025E4024B2632C7B /* WidgetDataProvider.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
+		REF_A5750EDF1E38452C98DAF876 /* ActiveTimerView.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
+		REF_0B7A9EEA334644088AE61F93 /* CompletionView.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
+		REF_E2791CCA25344BCABAD09236 /* PresetPickerView.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
+		REF_7CE7B1394A7046329E18BC54 /* ProUpgradeView.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
+		REF_CA7992DA9270447B9B16BD4D /* SettingsView.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
+		REF_7E221E327FE24A43A688777F /* StatsView.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
+		REF_17F75B3EA65E445681CA07E3 /* ThemePickerView.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
+		REF_71BF1635BACF49CE9DB892B9 /* TimerSetupView.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
+		REF_633E9D17BCCA4227848F46A1 /* TimerWidget.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
+		REF_89DFCCD6F1924B40A4FDD45D /* WidgetBundle.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
+		PROD_REF_E80263971DBE429FB92F0E6C /* TimeShadow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TimeShadow.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
-		GROUP_MAIN_A47CB2B73D10443EAFAA067C = {
+		GROUP_MAIN_96D372961BFD45DE995D0F6F = {
 			isa = PBXGroup;
 			children = (
-				GROUP_C0942BBADEF3450F8B5BC051 /* App */,
-				GROUP_B6A3C43E309D41BDBA55E74C /* Services */,
-				GROUP_9DCF1A25602C471C9B8923A6 /* Widgets */,
-				GROUP_82233D922389403E8A34BC72 /* Models */,
-				GROUP_D5180C60B55E4375928B5B41 /* Views */,
-				GROUP_PROD_AEBD0831D1C74EEB86B2B5FB /* Products */,
+				REF_ENTITLEMENTS_D9E8F7A6B5C4D3E2F1A0B9C8D7 /* TimeShadow.entitlements */,
+				GROUP_0EE058441AA54931ACE9C1A2 /* Services */,
+				GROUP_E9C4A305575F46D48926007D /* Widgets */,
+				GROUP_484AD04BB4954DF2AE172492 /* App */,
+				GROUP_CA15A92DD7954DC785192C73 /* Models */,
+				GROUP_0BDC03EEE18949ED8885B86D /* Views */,
+				GROUP_PROD_380B00C49BBE4B188AFB125D /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		GROUP_PROD_AEBD0831D1C74EEB86B2B5FB = {
+		GROUP_PROD_380B00C49BBE4B188AFB125D = {
 			isa = PBXGroup;
 			children = (
-				PROD_REF_1F34870D959A4C6890B3A42F /* TimeShadow.app */,
+				PROD_REF_E80263971DBE429FB92F0E6C /* TimeShadow.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		GROUP_C0942BBADEF3450F8B5BC051 = {
+		GROUP_0EE058441AA54931ACE9C1A2 = {
 			isa = PBXGroup;
 			children = (
-				REF_246AF262EF044263BA96C485 /* ContentView.swift */,
-				REF_ED721D9AD9E64104984E73FB /* TimeShadowApp.swift */,
-			);
-			path = "App";
-			sourceTree = "<group>";
-		};
-		GROUP_B6A3C43E309D41BDBA55E74C = {
-			isa = PBXGroup;
-			children = (
-				REF_C8BA217A308E4BA99DE2DB44 /* AnalyticsService.swift */,
-				REF_9EC99E736C004197B588F577 /* HapticService.swift */,
-				REF_17D7B524EC0749829A18E452 /* LiveActivityManager.swift */,
-				REF_4DBD2296F7144525B2E2EAD9 /* ShadowRenderer.swift */,
-				REF_32CFEA11BD0844F18250839B /* StoreKitManager.swift */,
-				REF_9B76C70ECADE4F569CFDE772 /* TimerEngine.swift */,
-				REF_FB2535E3F9B94CDCA0D1BAD6 /* WidgetDataProvider.swift */,
+				REF_0B9DAE9FBA73489995350002 /* AnalyticsService.swift */,
+				REF_5FBAF6CF6CD148BAB0317A2A /* HapticService.swift */,
+				REF_630A86038AFB41E087DF0432 /* LiveActivityManager.swift */,
+				REF_EF8BFC3B12EF4FA299A3580C /* ShadowRenderer.swift */,
+				REF_39E20E18B49C4EC791815DF1 /* StoreKitManager.swift */,
+				REF_832D6DCB4627489F900987A5 /* TimerEngine.swift */,
+				REF_A582F271025E4024B2632C7B /* WidgetDataProvider.swift */,
 			);
 			path = "Services";
 			sourceTree = "<group>";
 		};
-		GROUP_9DCF1A25602C471C9B8923A6 = {
+		GROUP_E9C4A305575F46D48926007D = {
 			isa = PBXGroup;
 			children = (
-				REF_E1767BCB59CA4C299E7F9B60 /* TimerWidget.swift */,
-				REF_79B79D1F1B5E4FF09B61460A /* WidgetBundle.swift */,
+				REF_633E9D17BCCA4227848F46A1 /* TimerWidget.swift */,
+				REF_89DFCCD6F1924B40A4FDD45D /* WidgetBundle.swift */,
 			);
 			path = "Widgets";
 			sourceTree = "<group>";
 		};
-		GROUP_82233D922389403E8A34BC72 = {
+		GROUP_484AD04BB4954DF2AE172492 = {
 			isa = PBXGroup;
 			children = (
-				REF_825673816DBB490D9D6CE1C8 /* ProUnlockManager.swift */,
-				REF_3CAE89482D234BE3B6270512 /* ShadowTheme.swift */,
-				REF_F4961A5457204629862AB7A2 /* TimerPreset.swift */,
-				REF_A393510C94E141ACBDB99C32 /* TimerSession.swift */,
+				REF_077F649D21664CE4873AA234 /* ContentView.swift */,
+				REF_BB63F177D69249D4A57ABFE8 /* TimeShadowApp.swift */,
+			);
+			path = "App";
+			sourceTree = "<group>";
+		};
+		GROUP_CA15A92DD7954DC785192C73 = {
+			isa = PBXGroup;
+			children = (
+				REF_5BFEDC9625324FA293FE0A8B /* ProUnlockManager.swift */,
+				REF_58FF80D2AE8C4587A9691DD2 /* ShadowTheme.swift */,
+				REF_52898A556F524EFE9DC37883 /* TimerPreset.swift */,
+				REF_2E48691DD1AA47CE9372256A /* TimerSession.swift */,
 			);
 			path = "Models";
 			sourceTree = "<group>";
 		};
-		GROUP_D5180C60B55E4375928B5B41 = {
+		GROUP_0BDC03EEE18949ED8885B86D = {
 			isa = PBXGroup;
 			children = (
-				REF_B5217B7F1E1643249F22B961 /* ActiveTimerView.swift */,
-				REF_21091EFBA2A241F5A415806C /* CompletionView.swift */,
-				REF_056C532F1429490C8E670C7B /* PresetPickerView.swift */,
-				REF_85B982DDA0F543128AF704C4 /* ProUpgradeView.swift */,
-				REF_40E22031D2D94FA0B88CC50C /* SettingsView.swift */,
-				REF_EE675EABB1D344C3A27D3667 /* StatsView.swift */,
-				REF_CB3290D9B17B435C91A28EF8 /* ThemePickerView.swift */,
-				REF_8DB73EB45010471EA9DCADED /* TimerSetupView.swift */,
+				REF_A5750EDF1E38452C98DAF876 /* ActiveTimerView.swift */,
+				REF_0B7A9EEA334644088AE61F93 /* CompletionView.swift */,
+				REF_E2791CCA25344BCABAD09236 /* PresetPickerView.swift */,
+				REF_7CE7B1394A7046329E18BC54 /* ProUpgradeView.swift */,
+				REF_CA7992DA9270447B9B16BD4D /* SettingsView.swift */,
+				REF_7E221E327FE24A43A688777F /* StatsView.swift */,
+				REF_17F75B3EA65E445681CA07E3 /* ThemePickerView.swift */,
+				REF_71BF1635BACF49CE9DB892B9 /* TimerSetupView.swift */,
 			);
 			path = "Views";
 			sourceTree = "<group>";
@@ -143,43 +145,43 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		NATIVE_TGT_30384DE66CA5438CA379FA6A = {
+		NATIVE_TGT_860EF41C5FE949F085715EA2 = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = TGT_CFGL_CDE24B8334014E88B14F3D8B /* Build configuration list for PBXNativeTarget "TimeShadow" */;
+			buildConfigurationList = TGT_CFGL_B784A437D8A2429B9BE622C6 /* Build configuration list for PBXNativeTarget "TimeShadow" */;
 			buildPhases = (
-				SRC_PHASE_283C38B5223B4BBFA39B69FE,
-				FW_PHASE_D9DA5B226E5045559A98113E,
-				RES_PHASE_9DED39C5861A4856949EF343,
+				SRC_PHASE_B0AC3C99EDF34C3EACB4ED8C,
+				FW_PHASE_F0D619607E9947D1BD9983F0,
+				RES_PHASE_CC881ABFFC194B4FAB89BCFC,
 			);
 			buildRules = ();
 			dependencies = ();
 			name = "TimeShadow";
 			productName = "TimeShadow";
-			productReference = PROD_REF_1F34870D959A4C6890B3A42F;
+			productReference = PROD_REF_E80263971DBE429FB92F0E6C;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		PROJECT_335CC233FA4342E29226DB42 = {
+		PROJECT_69A227E2B4BB4EFCB56CA810 = {
 			isa = PBXProject;
-			buildConfigurationList = PROJ_CFGL_DC48213F21D742F593813DA9 /* Build configuration list for PBXProject "TimeShadow" */;
+			buildConfigurationList = PROJ_CFGL_549A92232C3C45B28FBE51FE /* Build configuration list for PBXProject "TimeShadow" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = "en";
 			hasScannedForEncodings = 0;
 			knownRegions = ("en", "Base", );
-			mainGroup = GROUP_MAIN_A47CB2B73D10443EAFAA067C;
-			productRefGroup = GROUP_PROD_AEBD0831D1C74EEB86B2B5FB;
+			mainGroup = GROUP_MAIN_96D372961BFD45DE995D0F6F;
+			productRefGroup = GROUP_PROD_380B00C49BBE4B188AFB125D;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				NATIVE_TGT_30384DE66CA5438CA379FA6A,
+				NATIVE_TGT_860EF41C5FE949F085715EA2,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		RES_PHASE_9DED39C5861A4856949EF343 = {
+		RES_PHASE_CC881ABFFC194B4FAB89BCFC = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -189,40 +191,40 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		SRC_PHASE_283C38B5223B4BBFA39B69FE = {
+		SRC_PHASE_B0AC3C99EDF34C3EACB4ED8C = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BLD_13E3436B3D0643A380F2454F /* App/ContentView.swift in Sources */,
-				BLD_7346587DE2214AE9971E3D21 /* App/TimeShadowApp.swift in Sources */,
-				BLD_4004D8E02ACE4C4D9B8B78EA /* Models/ProUnlockManager.swift in Sources */,
-				BLD_2F8CDC20922B4277AB4D105D /* Models/ShadowTheme.swift in Sources */,
-				BLD_AAF098877DD64BFEBB2AE934 /* Models/TimerPreset.swift in Sources */,
-				BLD_59084959D54040809F60FC53 /* Models/TimerSession.swift in Sources */,
-				BLD_9293D46DB5894597A4AD0405 /* Services/AnalyticsService.swift in Sources */,
-				BLD_B613D6AAA4124DF18A53C101 /* Services/HapticService.swift in Sources */,
-				BLD_0DA60F0E1781461E8EBA55F0 /* Services/LiveActivityManager.swift in Sources */,
-				BLD_BB8B5989300E46A1904B0E30 /* Services/ShadowRenderer.swift in Sources */,
-				BLD_129F7BB98CDA4790811189D5 /* Services/StoreKitManager.swift in Sources */,
-				BLD_1E12F730BCC74D63AD6C012B /* Services/TimerEngine.swift in Sources */,
-				BLD_E4E8D7F79E90495BBA52BAA7 /* Services/WidgetDataProvider.swift in Sources */,
-				BLD_5C3D96B96E094896927BF07C /* Views/ActiveTimerView.swift in Sources */,
-				BLD_150A0AF3DD754CE08C1453C8 /* Views/CompletionView.swift in Sources */,
-				BLD_445A7946A3B44FCD9505FA1C /* Views/PresetPickerView.swift in Sources */,
-				BLD_0A7109AB551941C787401B8E /* Views/ProUpgradeView.swift in Sources */,
-				BLD_43D3E76335A440B484F28781 /* Views/SettingsView.swift in Sources */,
-				BLD_0F31924716B04B98AFCE0F0A /* Views/StatsView.swift in Sources */,
-				BLD_C5F1849005FA4F3690CC5CD4 /* Views/ThemePickerView.swift in Sources */,
-				BLD_41A184E6F4074212BB720301 /* Views/TimerSetupView.swift in Sources */,
-				BLD_5B6A958EE90F4E889246FDFD /* Widgets/TimerWidget.swift in Sources */,
-				BLD_70130E0856A94F679CE8A6F9 /* Widgets/WidgetBundle.swift in Sources */,
+				BLD_B0C942B3433642918D270C2A /* App/ContentView.swift in Sources */,
+				BLD_FC6CE8F93A00490AB191CE7E /* App/TimeShadowApp.swift in Sources */,
+				BLD_5243A963491C4960B24BC65A /* Models/ProUnlockManager.swift in Sources */,
+				BLD_2A74D8C9B80F48E493A1C36B /* Models/ShadowTheme.swift in Sources */,
+				BLD_ADD9F14AC7454EDEB33B698C /* Models/TimerPreset.swift in Sources */,
+				BLD_DEF9AFBE511B42A386C1ACD2 /* Models/TimerSession.swift in Sources */,
+				BLD_CE62FE1ADB544908A43CF2BD /* Services/AnalyticsService.swift in Sources */,
+				BLD_56E2568DD3224332A48E8072 /* Services/HapticService.swift in Sources */,
+				BLD_5A6A935CF6554D6299331EA7 /* Services/LiveActivityManager.swift in Sources */,
+				BLD_77CC9612D7314D93BD7D5E8E /* Services/ShadowRenderer.swift in Sources */,
+				BLD_541D130AD69B4A008AF51411 /* Services/StoreKitManager.swift in Sources */,
+				BLD_54D97C29948E4632A10404B8 /* Services/TimerEngine.swift in Sources */,
+				BLD_DD11987DDC7842CCB3726965 /* Services/WidgetDataProvider.swift in Sources */,
+				BLD_B9771207ED66441EAF433064 /* Views/ActiveTimerView.swift in Sources */,
+				BLD_8DC86AC246C641E99D8B67D2 /* Views/CompletionView.swift in Sources */,
+				BLD_D74F5A44619B4C66BDBF6F51 /* Views/PresetPickerView.swift in Sources */,
+				BLD_E6A70FEC77CB4134B49A606A /* Views/ProUpgradeView.swift in Sources */,
+				BLD_374C751A4B9C4147A93853C3 /* Views/SettingsView.swift in Sources */,
+				BLD_47E9F8E8AC11444994622D4F /* Views/StatsView.swift in Sources */,
+				BLD_2EC307C76C4E48AA97C306BC /* Views/ThemePickerView.swift in Sources */,
+				BLD_C5BF83E20FF947D496362B6B /* Views/TimerSetupView.swift in Sources */,
+				BLD_42756E45DC6E4AE4A9A5B89A /* Widgets/TimerWidget.swift in Sources */,
+				BLD_2629075B95B74977A1C7EB81 /* Widgets/WidgetBundle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		FW_PHASE_D9DA5B226E5045559A98113E = {
+		FW_PHASE_F0D619607E9947D1BD9983F0 = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -232,11 +234,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		DEBUG_CFG_739A54A45CA24C4087A315D5 = {
+		DEBUG_CFG_55140D3548BA402FBEF31BB3 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = "";
+				CODE_SIGN_ENTITLEMENTS = "Resources/TimeShadow.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
@@ -259,11 +262,12 @@
 			};
 			name = Debug;
 		};
-		RELEASE_CFG_24BCC3EBBB37483A89281E0D = {
+		RELEASE_CFG_1393F41D735E4DF490DB955D = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = "";
+				CODE_SIGN_ENTITLEMENTS = "Resources/TimeShadow.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
@@ -289,25 +293,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		PROJ_CFGL_DC48213F21D742F593813DA9 = {
+		PROJ_CFGL_549A92232C3C45B28FBE51FE = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DEBUG_CFG_739A54A45CA24C4087A315D5,
-				RELEASE_CFG_24BCC3EBBB37483A89281E0D,
+				DEBUG_CFG_55140D3548BA402FBEF31BB3,
+				RELEASE_CFG_1393F41D735E4DF490DB955D,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		TGT_CFGL_CDE24B8334014E88B14F3D8B = {
+		TGT_CFGL_B784A437D8A2429B9BE622C6 = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DEBUG_CFG_739A54A45CA24C4087A315D5,
-				RELEASE_CFG_24BCC3EBBB37483A89281E0D,
+				DEBUG_CFG_55140D3548BA402FBEF31BB3,
+				RELEASE_CFG_1393F41D735E4DF490DB955D,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = PROJECT_335CC233FA4342E29226DB42 /* Project object */;
+	rootObject = PROJECT_69A227E2B4BB4EFCB56CA810 /* Project object */;
 }

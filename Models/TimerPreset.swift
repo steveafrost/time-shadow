@@ -26,7 +26,7 @@ struct TimerPreset: Identifiable, Hashable, Codable {
         let hours = Int(duration) / 3600
         let minutes = (Int(duration) % 3600) / 60
         if hours > 0 {
-            return "\(h)h \(minutes)m"
+            return "\(hours)h \(minutes)m"
         }
         return "\(minutes)m"
     }

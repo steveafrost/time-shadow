@@ -66,6 +66,7 @@ struct TimerWidgetProvider: TimelineProvider {
 // MARK: - Entry View
 
 struct TimerWidgetEntryView: View {
+    @Environment(\.widgetFamily) var widgetFamily
     var entry: TimerWidgetEntry
 
     var body: some View {
