@@ -28,37 +28,33 @@
 		BLD_47E9F8E8AC11444994622D4F /* Views/StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = REF_7E221E327FE24A43A688777F /* Views/StatsView.swift */; };
 		BLD_2EC307C76C4E48AA97C306BC /* Views/ThemePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = REF_17F75B3EA65E445681CA07E3 /* Views/ThemePickerView.swift */; };
 		BLD_C5BF83E20FF947D496362B6B /* Views/TimerSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = REF_71BF1635BACF49CE9DB892B9 /* Views/TimerSetupView.swift */; };
-		BLD_42756E45DC6E4AE4A9A5B89A /* Widgets/TimerWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = REF_633E9D17BCCA4227848F46A1 /* Widgets/TimerWidget.swift */; };
-		BLD_2629075B95B74977A1C7EB81 /* Widgets/WidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = REF_89DFCCD6F1924B40A4FDD45D /* Widgets/WidgetBundle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		REF_ENTITLEMENTS_D9E8F7A6B5C4D3E2F1A0B9C8D7 /* TimeShadow.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "TimeShadow.entitlements"; sourceTree = "<group>"; };
-		REF_75615695413A4FD597223F3B /* .gitignore */ = {isa = PBXFileReference;; lastKnownFileType = text; path = ".gitignore"; sourceTree = "<group>"; };
-		REF_6252C83ADE9B444F9FA7DADD /* AGENTS.md */ = {isa = PBXFileReference;; lastKnownFileType = text; path = "AGENTS.md"; sourceTree = "<group>"; };
-		REF_077F649D21664CE4873AA234 /* ContentView.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
-		REF_BB63F177D69249D4A57ABFE8 /* TimeShadowApp.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
-		REF_5BFEDC9625324FA293FE0A8B /* ProUnlockManager.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
-		REF_58FF80D2AE8C4587A9691DD2 /* ShadowTheme.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
-		REF_52898A556F524EFE9DC37883 /* TimerPreset.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
-		REF_2E48691DD1AA47CE9372256A /* TimerSession.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
-		REF_0B9DAE9FBA73489995350002 /* AnalyticsService.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
-		REF_5FBAF6CF6CD148BAB0317A2A /* HapticService.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
-		REF_630A86038AFB41E087DF0432 /* LiveActivityManager.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
-		REF_EF8BFC3B12EF4FA299A3580C /* ShadowRenderer.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
-		REF_39E20E18B49C4EC791815DF1 /* StoreKitManager.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
-		REF_832D6DCB4627489F900987A5 /* TimerEngine.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
-		REF_A582F271025E4024B2632C7B /* WidgetDataProvider.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
-		REF_A5750EDF1E38452C98DAF876 /* ActiveTimerView.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
-		REF_0B7A9EEA334644088AE61F93 /* CompletionView.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
-		REF_E2791CCA25344BCABAD09236 /* PresetPickerView.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
-		REF_7CE7B1394A7046329E18BC54 /* ProUpgradeView.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
-		REF_CA7992DA9270447B9B16BD4D /* SettingsView.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
-		REF_7E221E327FE24A43A688777F /* StatsView.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
-		REF_17F75B3EA65E445681CA07E3 /* ThemePickerView.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
-		REF_71BF1635BACF49CE9DB892B9 /* TimerSetupView.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
-		REF_633E9D17BCCA4227848F46A1 /* TimerWidget.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
-		REF_89DFCCD6F1924B40A4FDD45D /* WidgetBundle.swift */ = {isa = PBXFileReference;; explicitFileType = sourcecode.swift; fileEncoding = 4; };
+		REF_75615695413A4FD597223F3B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = ".gitignore"; sourceTree = "<group>"; };
+		REF_6252C83ADE9B444F9FA7DADD /* AGENTS.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = "AGENTS.md"; sourceTree = "<group>"; };
+		REF_077F649D21664CE4873AA234 /* ContentView.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; fileEncoding = 4; };
+		REF_BB63F177D69249D4A57ABFE8 /* TimeShadowApp.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; fileEncoding = 4; };
+		REF_5BFEDC9625324FA293FE0A8B /* ProUnlockManager.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; fileEncoding = 4; };
+		REF_58FF80D2AE8C4587A9691DD2 /* ShadowTheme.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; fileEncoding = 4; };
+		REF_52898A556F524EFE9DC37883 /* TimerPreset.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; fileEncoding = 4; };
+		REF_2E48691DD1AA47CE9372256A /* TimerSession.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; fileEncoding = 4; };
+		REF_0B9DAE9FBA73489995350002 /* AnalyticsService.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; fileEncoding = 4; };
+		REF_5FBAF6CF6CD148BAB0317A2A /* HapticService.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; fileEncoding = 4; };
+		REF_630A86038AFB41E087DF0432 /* LiveActivityManager.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; fileEncoding = 4; };
+		REF_EF8BFC3B12EF4FA299A3580C /* ShadowRenderer.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; fileEncoding = 4; };
+		REF_39E20E18B49C4EC791815DF1 /* StoreKitManager.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; fileEncoding = 4; };
+		REF_832D6DCB4627489F900987A5 /* TimerEngine.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; fileEncoding = 4; };
+		REF_A582F271025E4024B2632C7B /* WidgetDataProvider.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; fileEncoding = 4; };
+		REF_A5750EDF1E38452C98DAF876 /* ActiveTimerView.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; fileEncoding = 4; };
+		REF_0B7A9EEA334644088AE61F93 /* CompletionView.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; fileEncoding = 4; };
+		REF_E2791CCA25344BCABAD09236 /* PresetPickerView.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; fileEncoding = 4; };
+		REF_7CE7B1394A7046329E18BC54 /* ProUpgradeView.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; fileEncoding = 4; };
+		REF_CA7992DA9270447B9B16BD4D /* SettingsView.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; fileEncoding = 4; };
+		REF_7E221E327FE24A43A688777F /* StatsView.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; fileEncoding = 4; };
+		REF_17F75B3EA65E445681CA07E3 /* ThemePickerView.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; fileEncoding = 4; };
+		REF_71BF1635BACF49CE9DB892B9 /* TimerSetupView.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; fileEncoding = 4; };
 		PROD_REF_E80263971DBE429FB92F0E6C /* TimeShadow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TimeShadow.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -101,8 +97,6 @@
 		GROUP_E9C4A305575F46D48926007D = {
 			isa = PBXGroup;
 			children = (
-				REF_633E9D17BCCA4227848F46A1 /* TimerWidget.swift */,
-				REF_89DFCCD6F1924B40A4FDD45D /* WidgetBundle.swift */,
 			);
 			path = "Widgets";
 			sourceTree = "<group>";
@@ -216,8 +210,6 @@
 				BLD_47E9F8E8AC11444994622D4F /* Views/StatsView.swift in Sources */,
 				BLD_2EC307C76C4E48AA97C306BC /* Views/ThemePickerView.swift in Sources */,
 				BLD_C5BF83E20FF947D496362B6B /* Views/TimerSetupView.swift in Sources */,
-				BLD_42756E45DC6E4AE4A9A5B89A /* Widgets/TimerWidget.swift in Sources */,
-				BLD_2629075B95B74977A1C7EB81 /* Widgets/WidgetBundle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

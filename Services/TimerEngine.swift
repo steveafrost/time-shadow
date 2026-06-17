@@ -87,12 +87,9 @@ class TimerEngine: ObservableObject {
 
     /// Elapsed time excluding paused periods.
     var activeElapsed: TimeInterval {
-        guard isRunning else { return elapsed }
-        let currentElapsed = elapsed - pauseElapsed
-        if isPaused, let ps = pauseStart {
-            return currentElapsed - Date().timeIntervalSince(ps)
-        }
-        return currentElapsed
+        // Always subtract total paused duration to get true active time
+        let totalPaused = pauseElapsed + (isPaused && pauseStart != nil ? Date().timeIntervalSince(pauseStart!) : 0)
+        return elapsed - totalPaused
     }
 
     // MARK: - Private Timer

@@ -84,6 +84,8 @@ class LiveActivityManager {
 // MARK: - Activity Attributes
 
 struct TimerWidgetAttributes: ActivityAttributes {
+    public typealias ContentState = TimerState
+
     public struct TimerState: Codable, Hashable {
         var progress: Double
         var remaining: TimeInterval

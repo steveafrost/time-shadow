@@ -7,7 +7,7 @@ import Foundation
 class WidgetDataProvider {
     static let shared = WidgetDataProvider()
 
-    private let suiteName = "group.com.nousresearch.timeshadow"
+    private let suiteName = "group.com.steveafrost.TimeShadow"
     private let progressKey = "widget_timer_progress"
     private let remainingKey = "widget_timer_remaining"
     private let isActiveKey = "widget_timer_active"
