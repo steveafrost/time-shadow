@@ -28,6 +28,11 @@
 		BLD_47E9F8E8AC11444994622D4F /* Views/StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = REF_7E221E327FE24A43A688777F /* Views/StatsView.swift */; };
 		BLD_2EC307C76C4E48AA97C306BC /* Views/ThemePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = REF_17F75B3EA65E445681CA07E3 /* Views/ThemePickerView.swift */; };
 		BLD_C5BF83E20FF947D496362B6B /* Views/TimerSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = REF_71BF1635BACF49CE9DB892B9 /* Views/TimerSetupView.swift */; };
+		BLD_9A1B2C3D4E5F6A7B8C9D0E1F /* Intents/StartTimerIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = REF_9A1B2C3D4E5F6A7B8C9D0E1F /* Intents/StartTimerIntent.swift */; };
+		BLD_0A1B2C3D4E5F6A7B8C9D0E1F /* Intents/AppShortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = REF_0A1B2C3D4E5F6A7B8C9D0E1F /* Intents/AppShortcuts.swift */; };
+		BLD_A1B2C3D4E5F6A7B8C9D0E1F2A /* Widgets/TimerWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = REF_A1B2C3D4E5F6A7B8C9D0E1F2A /* Widgets/TimerWidget.swift */; };
+		BLD_B1C2D3E4F5A6B7C8D9E0F1A2B3 /* Widgets/WidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = REF_B1C2D3E4F5A6B7C8D9E0F1A2B3 /* Widgets/WidgetBundle.swift */; };
+		BLD_C2D3E4F5A6B7C8D9E0F1A2B3C4D /* Resources/LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = REF_C2D3E4F5A6B7C8D9E0F1A2B3C4D /* Resources/LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +60,11 @@
 		REF_7E221E327FE24A43A688777F /* StatsView.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; fileEncoding = 4; };
 		REF_17F75B3EA65E445681CA07E3 /* ThemePickerView.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; fileEncoding = 4; };
 		REF_71BF1635BACF49CE9DB892B9 /* TimerSetupView.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; fileEncoding = 4; };
+		REF_9A1B2C3D4E5F6A7B8C9D0E1F /* StartTimerIntent.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; fileEncoding = 4; };
+		REF_0A1B2C3D4E5F6A7B8C9D0E1F /* AppShortcuts.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; fileEncoding = 4; };
+		REF_A1B2C3D4E5F6A7B8C9D0E1F2A /* TimerWidget.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; fileEncoding = 4; };
+		REF_B1C2D3E4F5A6B7C8D9E0F1A2B3 /* WidgetBundle.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; fileEncoding = 4; };
+		REF_C2D3E4F5A6B7C8D9E0F1A2B3C4D /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "LaunchScreen.storyboard"; sourceTree = "<group>"; };
 		PROD_REF_E80263971DBE429FB92F0E6C /* TimeShadow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TimeShadow.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -65,9 +75,11 @@
 				REF_ENTITLEMENTS_D9E8F7A6B5C4D3E2F1A0B9C8D7 /* TimeShadow.entitlements */,
 				GROUP_0EE058441AA54931ACE9C1A2 /* Services */,
 				GROUP_E9C4A305575F46D48926007D /* Widgets */,
+				GROUP_INTENTS_7A8B9C0D1E2F /* Intents */,
 				GROUP_484AD04BB4954DF2AE172492 /* App */,
 				GROUP_CA15A92DD7954DC785192C73 /* Models */,
 				GROUP_0BDC03EEE18949ED8885B86D /* Views */,
+				GROUP_RESOURCES_5E6F7A8B9C0D /* Resources */,
 				GROUP_PROD_380B00C49BBE4B188AFB125D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -78,6 +90,14 @@
 				PROD_REF_E80263971DBE429FB92F0E6C /* TimeShadow.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		GROUP_RESOURCES_5E6F7A8B9C0D = {
+			isa = PBXGroup;
+			children = (
+				REF_C2D3E4F5A6B7C8D9E0F1A2B3C4D /* LaunchScreen.storyboard */,
+			);
+			path = "Resources";
 			sourceTree = "<group>";
 		};
 		GROUP_0EE058441AA54931ACE9C1A2 = {
@@ -97,8 +117,19 @@
 		GROUP_E9C4A305575F46D48926007D = {
 			isa = PBXGroup;
 			children = (
+				REF_A1B2C3D4E5F6A7B8C9D0E1F2A /* TimerWidget.swift */,
+				REF_B1C2D3E4F5A6B7C8D9E0F1A2B3 /* WidgetBundle.swift */,
 			);
 			path = "Widgets";
+			sourceTree = "<group>";
+		};
+		GROUP_INTENTS_7A8B9C0D1E2F = {
+			isa = PBXGroup;
+			children = (
+				REF_9A1B2C3D4E5F6A7B8C9D0E1F /* StartTimerIntent.swift */,
+				REF_0A1B2C3D4E5F6A7B8C9D0E1F /* AppShortcuts.swift */,
+			);
+			path = "Intents";
 			sourceTree = "<group>";
 		};
 		GROUP_484AD04BB4954DF2AE172492 = {
@@ -179,6 +210,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BLD_C2D3E4F5A6B7C8D9E0F1A2B3C4D /* Resources/LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +242,10 @@
 				BLD_47E9F8E8AC11444994622D4F /* Views/StatsView.swift in Sources */,
 				BLD_2EC307C76C4E48AA97C306BC /* Views/ThemePickerView.swift in Sources */,
 				BLD_C5BF83E20FF947D496362B6B /* Views/TimerSetupView.swift in Sources */,
+				BLD_9A1B2C3D4E5F6A7B8C9D0E1F /* Intents/StartTimerIntent.swift in Sources */,
+				BLD_0A1B2C3D4E5F6A7B8C9D0E1F /* Intents/AppShortcuts.swift in Sources */,
+				BLD_A1B2C3D4E5F6A7B8C9D0E1F2A /* Widgets/TimerWidget.swift in Sources */,
+				BLD_B1C2D3E4F5A6B7C8D9E0F1A2B3 /* Widgets/WidgetBundle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

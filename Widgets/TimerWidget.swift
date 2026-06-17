@@ -1,19 +1,24 @@
 import WidgetKit
 import SwiftUI
+import AppIntents
 
 // MARK: - TimerWidget
 
-/// Lock Screen widget that shows the current timer progress as a compact gradient bar.
+/// Widget that shows timer progress and provides a Start Focus button.
 struct TimerWidget: Widget {
     let kind: String = "com.nousresearch.timeshadow.timerwidget"
 
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: TimerWidgetProvider()) { entry in
+        AppIntentConfiguration(
+            kind: kind,
+            intent: StartTimerIntent.self,
+            provider: TimerWidgetProvider()
+        ) { entry in
             TimerWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("Timer Progress")
-        .description("Shows your active Time Shadow timer.")
-        .supportedFamilies([.accessoryCircular, .accessoryRectangular, .systemSmall])
+        .description("Shows your active Time Shadow timer with Start Focus button.")
+        .supportedFamilies([.accessoryCircular, .accessoryRectangular, .systemSmall, .systemMedium, .systemLarge])
     }
 }
 
@@ -33,20 +38,35 @@ struct TimerWidgetEntry: TimelineEntry {
         isActive: true,
         themeID: "warmGray"
     )
+
+    static let inactive = TimerWidgetEntry(
+        date: Date(),
+        progress: 0.0,
+        remaining: 0,
+        isActive: false,
+        themeID: "warmGray"
+    )
 }
 
 // MARK: - Provider
 
-struct TimerWidgetProvider: TimelineProvider {
+struct TimerWidgetProvider: AppIntentTimelineProvider {
     func placeholder(in context: Context) -> TimerWidgetEntry {
         .placeholder
     }
 
-    func getSnapshot(in context: Context, completion: @escaping (TimerWidgetEntry) -> Void) {
-        completion(.placeholder)
+    func snapshot(for configuration: StartTimerIntent, in context: Context) async -> TimerWidgetEntry {
+        let data = WidgetDataProvider.shared
+        return TimerWidgetEntry(
+            date: Date(),
+            progress: data.currentProgress,
+            remaining: data.currentRemaining,
+            isActive: data.isTimerActive,
+            themeID: data.currentThemeID
+        )
     }
 
-    func getTimeline(in context: Context, completion: @escaping (Timeline<TimerWidgetEntry>) -> Void) {
+    func timeline(for configuration: StartTimerIntent, in context: Context) async -> Timeline<TimerWidgetEntry> {
         let data = WidgetDataProvider.shared
         let entry = TimerWidgetEntry(
             date: Date(),
@@ -55,11 +75,10 @@ struct TimerWidgetProvider: TimelineProvider {
             isActive: data.isTimerActive,
             themeID: data.currentThemeID
         )
-        // Refresh every 15 seconds while active
+        // Refresh every 15 seconds while active, 300 seconds otherwise
         let refreshInterval: TimeInterval = data.isTimerActive ? 15 : 300
         let nextUpdate = Date().addingTimeInterval(refreshInterval)
-        let timeline = Timeline(entries: [entry], policy: .after(nextUpdate))
-        completion(timeline)
+        return Timeline(entries: [entry], policy: .after(nextUpdate))
     }
 }
 
@@ -79,6 +98,10 @@ struct TimerWidgetEntryView: View {
                     rectangularView
                 case .systemSmall:
                     smallView
+                case .systemMedium:
+                    mediumActiveView
+                case .systemLarge:
+                    largeActiveView
                 default:
                     smallView
                 }
@@ -92,7 +115,6 @@ struct TimerWidgetEntryView: View {
 
     private var circularView: some View {
         ZStack {
-            // Circular progress ring
             Circle()
                 .stroke(Color.secondary.opacity(0.3), lineWidth: 3)
 
@@ -123,7 +145,6 @@ struct TimerWidgetEntryView: View {
                 .font(.caption2)
                 .foregroundColor(.secondary)
 
-            // Gradient progress bar
             GeometryReader { geo in
                 ZStack(alignment: .leading) {
                     RoundedRectangle(cornerRadius: 3)
@@ -180,16 +201,152 @@ struct TimerWidgetEntryView: View {
         }
     }
 
+    // MARK: - Medium Active
+
+    private var mediumActiveView: some View {
+        HStack(spacing: 12) {
+            // Timer progress
+            VStack(alignment: .leading, spacing: 6) {
+                Label("Time Shadow", systemImage: "moon.fill")
+                    .font(.caption)
+                    .foregroundColor(.secondary)
+
+                GeometryReader { geo in
+                    ZStack(alignment: .leading) {
+                        RoundedRectangle(cornerRadius: 4)
+                            .fill(Color.secondary.opacity(0.2))
+                            .frame(height: 8)
+
+                        RoundedRectangle(cornerRadius: 4)
+                            .fill(
+                                LinearGradient(
+                                    gradient: Gradient(colors: themeColors),
+                                    startPoint: .leading,
+                                    endPoint: .trailing
+                                )
+                            )
+                            .frame(width: geo.size.width * entry.progress, height: 8)
+                    }
+                }
+                .frame(height: 8)
+
+                Text(timeRemainingPhrase)
+                    .font(.caption)
+                    .foregroundColor(.primary)
+            }
+
+            Spacer()
+
+            // Completion percentage
+            VStack {
+                Text("\(Int(entry.progress * 100))%")
+                    .font(.title2)
+                    .fontWeight(.bold)
+                    .foregroundColor(.primary)
+                Text("complete")
+                    .font(.caption2)
+                    .foregroundColor(.secondary)
+            }
+        }
+        .padding()
+    }
+
+    // MARK: - Large Active
+
+    private var largeActiveView: some View {
+        VStack(spacing: 16) {
+            Spacer()
+
+            // Circular progress
+            ZStack {
+                Circle()
+                    .stroke(Color.secondary.opacity(0.2), lineWidth: 8)
+
+                Circle()
+                    .trim(from: 0, to: entry.progress)
+                    .stroke(
+                        LinearGradient(
+                            gradient: Gradient(colors: themeColors),
+                            startPoint: .leading,
+                            endPoint: .trailing
+                        ),
+                        style: StrokeStyle(lineWidth: 8, lineCap: .round)
+                    )
+                    .rotationEffect(.degrees(-90))
+
+                VStack(spacing: 4) {
+                    Text("\(Int(entry.progress * 100))%")
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                        .foregroundColor(.primary)
+                    Text(timeRemainingPhrase)
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                }
+            }
+            .frame(width: 120, height: 120)
+
+            // Progress bar
+            GeometryReader { geo in
+                ZStack(alignment: .leading) {
+                    RoundedRectangle(cornerRadius: 4)
+                        .fill(Color.secondary.opacity(0.2))
+                        .frame(height: 8)
+
+                    RoundedRectangle(cornerRadius: 4)
+                        .fill(
+                            LinearGradient(
+                                gradient: Gradient(colors: themeColors),
+                                startPoint: .leading,
+                                endPoint: .trailing
+                            )
+                        )
+                        .frame(width: geo.size.width * entry.progress, height: 8)
+                }
+            }
+            .frame(height: 8)
+            .padding(.horizontal, 32)
+
+            Spacer()
+        }
+        .padding()
+    }
+
     // MARK: - Inactive
 
     private var inactiveView: some View {
-        VStack(spacing: 4) {
+        VStack(spacing: 12) {
             Image(systemName: "moon")
-                .font(.title3)
+                .font(.title)
                 .foregroundColor(.secondary)
             Text("No Timer")
-                .font(.caption2)
+                .font(.headline)
                 .foregroundColor(.secondary)
+
+            if widgetFamily == .systemMedium || widgetFamily == .systemLarge {
+                Button(intent: StartTimerIntent(duration: 25)) {
+                    Label("Start Focus", systemImage: "play.fill")
+                        .font(.subheadline)
+                        .fontWeight(.semibold)
+                        .padding(.horizontal, 20)
+                        .padding(.vertical, 10)
+                        .background(
+                            LinearGradient(
+                                gradient: Gradient(colors: themeColors),
+                                startPoint: .leading,
+                                endPoint: .trailing
+                            )
+                            .cornerRadius(12)
+                        )
+                        .foregroundColor(.white)
+                }
+                .buttonStyle(.plain)
+            } else {
+                // Small widget hint
+                Text("Tap to start")
+                    .font(.caption2)
+                    .foregroundColor(.secondary.opacity(0.7))
+            }
         }
     }
 

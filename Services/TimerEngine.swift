@@ -9,6 +9,8 @@ import UIKit
 /// Handles pause / resume / cancel.
 @MainActor
 class TimerEngine: ObservableObject {
+    // MARK: - Shared singleton (for App Intents access)
+    static let shared = TimerEngine()
     // MARK: - Published state
     @Published var progress: Double = 0.0        // 0.0 → 1.0
     @Published var isRunning = false

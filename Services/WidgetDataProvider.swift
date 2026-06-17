@@ -1,4 +1,5 @@
 import Foundation
+import WidgetKit
 
 // MARK: - WidgetDataProvider
 
@@ -50,5 +51,12 @@ class WidgetDataProvider {
 
     var currentThemeID: String {
         defaults?.string(forKey: themeIDKey) ?? "warmGray"
+    }
+
+    // MARK: - Widget Reloading
+
+    /// Reloads all widget timelines so they pick up the latest timer state.
+    func reloadWidgets() async {
+        await WidgetCenter.shared.reloadAllTimelines()
     }
 }
