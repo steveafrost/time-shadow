@@ -12,7 +12,7 @@ struct TimerPreset: Identifiable, Hashable, Codable {
     static let defaultPresets: [TimerPreset] = [
         TimerPreset(id: UUID(), name: "Focus", duration: 25 * 60, isPro: false),
         TimerPreset(id: UUID(), name: "Short", duration: 5 * 60, isPro: false),
-        TimerPreset(id: UUID(), name: "Long", duration: 50 * 60, isPro: false),
+        TimerPreset(id: UUID(), name: "Long", duration: 50 * 60, isPro: true),
         TimerPreset(id: UUID(), name: "Deep Focus", duration: 90 * 60, isPro: true),
         TimerPreset(id: UUID(), name: "Nap", duration: 20 * 60, isPro: false),
         TimerPreset(id: UUID(), name: "Break", duration: 15 * 60, isPro: false),

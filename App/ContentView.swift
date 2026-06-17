@@ -1,4 +1,5 @@
 import SwiftUI
+import UIKit
 
 // MARK: - ContentView
 
@@ -8,6 +9,8 @@ struct ContentView: View {
     @EnvironmentObject private var timerEngine: TimerEngine
     @EnvironmentObject private var proUnlock: ProUnlockManager
     @EnvironmentObject private var analytics: AnalyticsService
+    @EnvironmentObject private var appSettings: AppSettings
+
     @State private var showActiveTimer = false
     @State private var selectedTheme: ShadowTheme = .warmGray
 
@@ -15,13 +18,14 @@ struct ContentView: View {
         ZStack {
             if showActiveTimer {
                 ActiveTimerView(theme: $selectedTheme, onDismiss: {
+                    endAmbientSession()
                     showActiveTimer = false
                 })
                 .transition(.opacity)
                 .zIndex(1)
             } else {
                 TimerSetupView(selectedTheme: $selectedTheme, onStart: { duration in
-                    timerEngine.start(duration: duration)
+                    startAmbientSession(duration: duration)
                     withAnimation(.easeInOut(duration: 0.5)) {
                         showActiveTimer = true
                     }
@@ -30,5 +34,38 @@ struct ContentView: View {
             }
         }
         .animation(.default, value: showActiveTimer)
+    }
+
+    // MARK: - Timer Lifecycle
+
+    private func startAmbientSession(duration: TimeInterval) {
+        timerEngine.start(duration: duration)
+        WidgetDataProvider.shared.start(duration: duration, themeID: selectedTheme.id)
+
+        if appSettings.keepScreenAwakeEnabled {
+            UIApplication.shared.isIdleTimerDisabled = true
+        }
+
+        if appSettings.liveActivitiesEnabled {
+            LiveActivityManager.shared.startActivity(duration: duration, themeID: selectedTheme.id)
+        }
+
+        if appSettings.completionNotificationsEnabled {
+            Task {
+                await NotificationService.shared.scheduleTimerCompletion(
+                    after: duration,
+                    themeName: selectedTheme.name,
+                    silent: appSettings.completionFeedbackIsSilent(isPro: proUnlock.isPro)
+                )
+            }
+        }
+    }
+
+    private func endAmbientSession() {
+        UIApplication.shared.isIdleTimerDisabled = false
+        NotificationService.shared.cancelTimerCompletion()
+        WidgetDataProvider.shared.markInactive()
+        LiveActivityManager.shared.cancelActivity()
+        HapticService.shared.stopHaptic()
     }
 }

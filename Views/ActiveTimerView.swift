@@ -1,4 +1,5 @@
 import SwiftUI
+import UIKit
 
 // MARK: - ActiveTimerView
 
@@ -10,12 +11,13 @@ struct ActiveTimerView: View {
     @EnvironmentObject private var timerEngine: TimerEngine
     @EnvironmentObject private var proUnlock: ProUnlockManager
     @EnvironmentObject private var analytics: AnalyticsService
+    @EnvironmentObject private var appSettings: AppSettings
 
     @Binding var theme: ShadowTheme
     let onDismiss: () -> Void
 
     @State private var showCompletion = false
-    @State private var showPauseOverlay = false
+    @State private var lastExternalSurfaceUpdate = Date.distantPast
 
     var body: some View {
         ZStack {
@@ -55,66 +57,65 @@ struct ActiveTimerView: View {
             VStack {
                 Spacer()
                 HStack {
-                    // Cancel button
-                    Button {
-                        withAnimation {
-                            timerEngine.cancel()
-                            onDismiss()
-                        }
-                    } label: {
-                        Image(systemName: "xmark")
-                            .font(.title3)
-                            .foregroundColor(.secondary)
-                            .padding(20)
-                            .background(.ultraThinMaterial)
-                            .clipShape(Circle())
-                    }
-                    .padding(.leading, 24)
+                    cancelButton
+                        .padding(.leading, 24)
 
                     Spacer()
 
-                    // Pause/Resume button
-                    Button {
-                        if timerEngine.isPaused {
-                            timerEngine.resume()
-                        } else {
-                            timerEngine.pause()
-                        }
-                    } label: {
-                        Image(systemName: timerEngine.isPaused ? "play.fill" : "pause.fill")
-                            .font(.title3)
-                            .foregroundColor(.secondary)
-                            .padding(20)
-                            .background(.ultraThinMaterial)
-                            .clipShape(Circle())
-                    }
-                    .padding(.trailing, 24)
+                    pauseResumeButton
+                        .padding(.trailing, 24)
                 }
                 .padding(.bottom, 60)
             }
         }
         .onAppear {
-            // Wire up completion callback
-            timerEngine.onComplete = { [self] in
-                HapticService.shared.playFinishHaptic()
-                if proUnlock.isPro {
-                    HapticService.shared.playSunriseHaptic()
-                }
-                recordSession()
-                withAnimation(.easeInOut(duration: 1.0)) {
-                    showCompletion = true
-                }
-            }
+            timerEngine.onComplete = handleCompletion
         }
-        .onChange(of: timerEngine.progress) { newProgress in
-            WidgetDataProvider.shared.update(
-                progress: newProgress,
-                remaining: timerEngine.remaining,
-                themeID: theme.id
-            )
+        .onChange(of: timerEngine.progress) { _, newProgress in
+            updateExternalSurfaces(progress: newProgress)
         }
         .statusBar(hidden: true)
         .preferredColorScheme(.dark)
+    }
+
+    // MARK: - Controls
+
+    private var cancelButton: some View {
+        Button {
+            withAnimation {
+                timerEngine.cancel()
+                onDismiss()
+            }
+        } label: {
+            Image(systemName: "xmark")
+                .font(.title3)
+                .foregroundColor(.secondary)
+                .padding(20)
+                .background(.ultraThinMaterial)
+                .clipShape(Circle())
+        }
+        .accessibilityLabel("Cancel timer")
+        .accessibilityHint("Stops the current Time Shadow timer")
+    }
+
+    private var pauseResumeButton: some View {
+        Button {
+            if timerEngine.isPaused {
+                timerEngine.resume()
+                rescheduleCompletionNotification()
+            } else {
+                timerEngine.pause()
+                NotificationService.shared.cancelTimerCompletion()
+            }
+        } label: {
+            Image(systemName: timerEngine.isPaused ? "play.fill" : "pause.fill")
+                .font(.title3)
+                .foregroundColor(.secondary)
+                .padding(20)
+                .background(.ultraThinMaterial)
+                .clipShape(Circle())
+        }
+        .accessibilityLabel(timerEngine.isPaused ? "Resume timer" : "Pause timer")
     }
 
     // MARK: - Pause Indicator
@@ -134,6 +135,54 @@ struct ActiveTimerView: View {
         }
     }
 
+    // MARK: - Completion & External Surfaces
+
+    private func handleCompletion() {
+        UIApplication.shared.isIdleTimerDisabled = false
+        NotificationService.shared.cancelTimerCompletion()
+        WidgetDataProvider.shared.markInactive()
+        LiveActivityManager.shared.endActivity()
+
+        if !appSettings.completionFeedbackIsSilent(isPro: proUnlock.isPro) {
+            HapticService.shared.playFinishHaptic()
+            if proUnlock.isPro && appSettings.sunriseHapticsEnabled {
+                HapticService.shared.playSunriseHaptic()
+            }
+        }
+
+        recordSession()
+        withAnimation(.easeInOut(duration: 1.0)) {
+            showCompletion = true
+        }
+    }
+
+    private func updateExternalSurfaces(progress: Double) {
+        let now = Date()
+        guard progress >= 1 || now.timeIntervalSince(lastExternalSurfaceUpdate) >= 5 else { return }
+        lastExternalSurfaceUpdate = now
+
+        WidgetDataProvider.shared.update(
+            progress: progress,
+            remaining: timerEngine.remaining,
+            themeID: theme.id
+        )
+
+        if appSettings.liveActivitiesEnabled {
+            LiveActivityManager.shared.updateActivity(progress: progress, remaining: timerEngine.remaining)
+        }
+    }
+
+    private func rescheduleCompletionNotification() {
+        guard appSettings.completionNotificationsEnabled else { return }
+        Task {
+            await NotificationService.shared.scheduleTimerCompletion(
+                after: timerEngine.remaining,
+                themeName: theme.name,
+                silent: appSettings.completionFeedbackIsSilent(isPro: proUnlock.isPro)
+            )
+        }
+    }
+
     // MARK: - Session Recording
 
     private var currentSession: TimerSession {
@@ -148,14 +197,6 @@ struct ActiveTimerView: View {
     }
 
     private func recordSession() {
-        let session = TimerSession(
-            startDate: timerEngine.startDate ?? Date(),
-            endDate: Date(),
-            duration: timerEngine.totalDuration,
-            actualDuration: timerEngine.activeElapsed,
-            themeID: theme.id,
-            completedNormally: true
-        )
-        analytics.recordSession(session)
+        analytics.recordSession(currentSession)
     }
 }

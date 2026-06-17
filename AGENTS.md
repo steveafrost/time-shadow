@@ -80,7 +80,7 @@ TimeShadow/
 - **HapticService.swift** — Two patterns: (1) `playFinishHaptic()` — three gentle `UIImpactFeedbackGenerator` taps. (2) `playSunriseHaptic(duration:)` — escalating CHHapticEngine pattern: 16 transient taps growing in intensity + a continuous low-frequency hum that fades in over the alarm duration.
 - **LiveActivityManager.swift** — `Activity<TimerWidgetAttributes>` management. `startActivity(duration:themeID:)`, `updateActivity(progress:remaining:)`, `endActivity()`, `cancelActivity()`. The Dynamic Island shows a shrinking gradient bar + relative time phrase (e.g., "About 12 min left").
 - **WidgetDataProvider.swift** — App Group `UserDefaults(suiteName:)` bridge between app and widget extension. Writes progress/remaining/active state/theme ID. Widget reads on timeline refresh.
-- **StoreKitManager.swift** — `@MainActor ObservableObject`. Loads product `com.nousresearch.timeshadow.pro` via StoreKit 2. Handles purchase flow, transaction verification, `Transaction.updates` observation, `Transaction.currentEntitlements` check, and restore.
+- **StoreKitManager.swift** — `@MainActor ObservableObject`. Loads product `com.steveafrost.TimeShadow.pro` via StoreKit 2. Handles purchase flow, transaction verification, `Transaction.updates` observation, `Transaction.currentEntitlements` check, and restore.
 - **AnalyticsService.swift** — Records `TimerSession` objects to UserDefaults (JSON array, max 500). Provides `totalFocusMinutes`, `totalSessionsCompleted`, `averageSessionMinutes`, and `weeklySessions` grouping for charts.
 
 ### Views (8 files)
@@ -144,12 +144,12 @@ open -a Xcode
 
 1. File → New → Target → Widget Extension → "TimeShadowWidgets"
 2. Set the `TimerWidget.swift` and `WidgetBundle.swift` as the widget target's source files
-3. Set up an App Group (`group.com.nousresearch.timeshadow`) in both the main app and widget capabilities
+3. Set up an App Group (`group.com.steveafrost.TimeShadow`) in both the main app and widget capabilities
 
 ### 2. Required Capabilities
 
 For the main app target:
-- **App Groups** — `group.com.nousresearch.timeshadow`
+- **App Groups** — `group.com.steveafrost.TimeShadow`
 - **Live Activities** — Enabled in Info.plist (`NSSupportsLiveActivities = YES`)
 - **Background Modes** — Optional: "Background processing" for longer timers
 
@@ -163,7 +163,7 @@ For the widget extension target:
 <true/>
 <key>StoreKit</key>
 <dict>
-    <key>com.nousresearch.timeshadow.pro</key>
+    <key>com.steveafrost.TimeShadow.pro</key>
     <dict>
         <key>type</key>
         <string>Non-Consumable</string>

@@ -1,12 +1,13 @@
+import ActivityKit
 import WidgetKit
 import SwiftUI
 import AppIntents
 
 // MARK: - TimerWidget
 
-/// Widget that shows timer progress and provides a Start Focus button.
+/// Lock Screen and Home Screen widget that shows timer progress and provides a Start Focus button.
 struct TimerWidget: Widget {
-    let kind: String = "com.nousresearch.timeshadow.timerwidget"
+    let kind: String = WidgetDataProvider.widgetKind
 
     var body: some WidgetConfiguration {
         AppIntentConfiguration(
@@ -15,6 +16,7 @@ struct TimerWidget: Widget {
             provider: TimerWidgetProvider()
         ) { entry in
             TimerWidgetEntryView(entry: entry)
+                .containerBackground(.fill.tertiary, for: .widget)
         }
         .configurationDisplayName("Timer Progress")
         .description("Shows your active Time Shadow timer with Start Focus button.")
@@ -145,24 +147,7 @@ struct TimerWidgetEntryView: View {
                 .font(.caption2)
                 .foregroundColor(.secondary)
 
-            GeometryReader { geo in
-                ZStack(alignment: .leading) {
-                    RoundedRectangle(cornerRadius: 3)
-                        .fill(Color.secondary.opacity(0.3))
-                        .frame(height: 6)
-
-                    RoundedRectangle(cornerRadius: 3)
-                        .fill(
-                            LinearGradient(
-                                gradient: Gradient(colors: themeColors),
-                                startPoint: .leading,
-                                endPoint: .trailing
-                            )
-                        )
-                        .frame(width: geo.size.width * entry.progress, height: 6)
-                }
-            }
-            .frame(height: 6)
+            progressBar(width: nil, height: 6)
 
             Text(timeRemainingPhrase)
                 .font(.caption)
@@ -178,22 +163,7 @@ struct TimerWidgetEntryView: View {
                 .font(.title2)
                 .foregroundColor(.secondary)
 
-            ZStack(alignment: .leading) {
-                RoundedRectangle(cornerRadius: 4)
-                    .fill(Color.secondary.opacity(0.2))
-                    .frame(height: 8)
-
-                RoundedRectangle(cornerRadius: 4)
-                    .fill(
-                        LinearGradient(
-                            gradient: Gradient(colors: themeColors),
-                            startPoint: .leading,
-                            endPoint: .trailing
-                        )
-                    )
-                    .frame(width: 60 * entry.progress, height: 8)
-            }
-            .frame(width: 60)
+            progressBar(width: 72, height: 8)
 
             Text(timeRemainingPhrase)
                 .font(.caption2)
@@ -352,6 +322,28 @@ struct TimerWidgetEntryView: View {
 
     // MARK: - Helpers
 
+    private func progressBar(width: CGFloat?, height: CGFloat) -> some View {
+        GeometryReader { geo in
+            let availableWidth = width ?? geo.size.width
+            ZStack(alignment: .leading) {
+                RoundedRectangle(cornerRadius: height / 2)
+                    .fill(Color.secondary.opacity(0.25))
+                    .frame(width: availableWidth, height: height)
+
+                RoundedRectangle(cornerRadius: height / 2)
+                    .fill(
+                        LinearGradient(
+                            gradient: Gradient(colors: themeColors),
+                            startPoint: .leading,
+                            endPoint: .trailing
+                        )
+                    )
+                    .frame(width: availableWidth * min(max(entry.progress, 0), 1), height: height)
+            }
+        }
+        .frame(width: width, height: height)
+    }
+
     private var themeColors: [Color] {
         let defaultColors: [Color] = [.gray, .black.opacity(0.4)]
         guard let theme = ShadowTheme.allCases.first(where: { $0.id == entry.themeID }) else {
@@ -361,10 +353,126 @@ struct TimerWidgetEntryView: View {
     }
 
     private var timeRemainingPhrase: String {
-        let mins = Int(entry.remaining) / 60
-        if mins > 60 {
+        let mins = max(Int(entry.remaining) / 60, 0)
+        if mins >= 60 {
             return "\(mins / 60)h \(mins % 60)m left"
         }
         return "\(mins) min left"
+    }
+}
+
+// MARK: - Live Activity Widget
+
+struct TimerLiveActivityWidget: Widget {
+    var body: some WidgetConfiguration {
+        ActivityConfiguration(for: TimerWidgetAttributes.self) { context in
+            TimerLiveActivityView(
+                progress: context.state.progress,
+                remaining: context.state.remaining,
+                themeID: context.attributes.themeID
+            )
+            .activityBackgroundTint(Color.black.opacity(0.35))
+            .activitySystemActionForegroundColor(.white)
+        } dynamicIsland: { context in
+            DynamicIsland {
+                DynamicIslandExpandedRegion(.leading) {
+                    Label("Time Shadow", systemImage: "moon.fill")
+                        .font(.caption)
+                }
+                DynamicIslandExpandedRegion(.trailing) {
+                    Text(TimeFormatter.phrase(for: context.state.remaining))
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
+                DynamicIslandExpandedRegion(.bottom) {
+                    TimerActivityProgressBar(
+                        progress: context.state.progress,
+                        themeID: context.attributes.themeID,
+                        height: 8
+                    )
+                    .padding(.top, 4)
+                }
+            } compactLeading: {
+                Image(systemName: "moon.fill")
+            } compactTrailing: {
+                Text(TimeFormatter.short(for: context.state.remaining))
+                    .monospacedDigit()
+            } minimal: {
+                ProgressView(value: context.state.progress)
+                    .progressViewStyle(.circular)
+                    .tint(.secondary)
+            }
+        }
+    }
+}
+
+struct TimerLiveActivityView: View {
+    let progress: Double
+    let remaining: TimeInterval
+    let themeID: String
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            HStack {
+                Label("Time Shadow", systemImage: "moon.fill")
+                    .font(.headline)
+                Spacer()
+                Text(TimeFormatter.phrase(for: remaining))
+                    .font(.subheadline)
+                    .foregroundStyle(.secondary)
+                    .monospacedDigit()
+            }
+
+            TimerActivityProgressBar(progress: progress, themeID: themeID, height: 10)
+        }
+        .padding()
+    }
+}
+
+struct TimerActivityProgressBar: View {
+    let progress: Double
+    let themeID: String
+    let height: CGFloat
+
+    var body: some View {
+        GeometryReader { geo in
+            ZStack(alignment: .leading) {
+                RoundedRectangle(cornerRadius: height / 2)
+                    .fill(Color.secondary.opacity(0.25))
+
+                RoundedRectangle(cornerRadius: height / 2)
+                    .fill(
+                        LinearGradient(
+                            gradient: Gradient(colors: themeColors),
+                            startPoint: .leading,
+                            endPoint: .trailing
+                        )
+                    )
+                    .frame(width: geo.size.width * min(max(progress, 0), 1))
+            }
+        }
+        .frame(height: height)
+    }
+
+    private var themeColors: [Color] {
+        ShadowTheme.allCases.first(where: { $0.id == themeID })?.gradientColors ?? [.gray, .black.opacity(0.4)]
+    }
+}
+
+enum TimeFormatter {
+    static func phrase(for remaining: TimeInterval) -> String {
+        let mins = max(Int(ceil(remaining / 60)), 0)
+        if mins >= 60 {
+            return "About \(mins / 60)h \(mins % 60)m left"
+        }
+        return "About \(mins) min left"
+    }
+
+    static func short(for remaining: TimeInterval) -> String {
+        let mins = max(Int(ceil(remaining / 60)), 0)
+        if mins >= 60 {
+            return "\(mins / 60)h"
+        }
+        return "\(mins)m"
     }
 }

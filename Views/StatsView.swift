@@ -44,7 +44,7 @@ struct StatsView: View {
                                 .foregroundColor(.secondary)
                             Text("Complete a timer to see your focus stats.")
                                 .font(.caption)
-                                .foregroundColor(.tertiary)
+                                .foregroundColor(.secondary.opacity(0.7))
                         }
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 40)
@@ -145,7 +145,11 @@ struct StatsView: View {
         }
         .chartXAxis {
             AxisMarks(values: .automatic) { value in
-                AxisValueLabel(format: .dateTime.week(.weekOfYear), centered: true)
+                AxisValueLabel(centered: true) {
+                    if let date = value.as(Date.self) {
+                        Text(date, format: .dateTime.month().day())
+                    }
+                }
             }
         }
         .chartYAxis {

@@ -83,8 +83,8 @@ struct TimerSetupView: View {
                     // MARK: - Start Button
                     VStack(spacing: 8) {
                         Button {
-                            let duration = selectedPreset?.duration ?? (customMinutes * 60)
-                            onStart(duration)
+                            normalizeThemeForCurrentUnlockState()
+                            onStart(selectedDuration)
                         } label: {
                             Text("Start")
                                 .font(.title2)
@@ -142,6 +142,24 @@ struct TimerSetupView: View {
             .sheet(isPresented: $showCustomPicker) {
                 customDurationSheet
             }
+            .onAppear(perform: normalizeThemeForCurrentUnlockState)
+            .onChange(of: proUnlock.isPro) { _, _ in
+                normalizeThemeForCurrentUnlockState()
+            }
+        }
+    }
+
+    private var selectedDuration: TimeInterval {
+        guard let selectedPreset else { return customMinutes * 60 }
+        if selectedPreset.name == "Custom" {
+            return customMinutes * 60
+        }
+        return selectedPreset.duration
+    }
+
+    private func normalizeThemeForCurrentUnlockState() {
+        if selectedTheme.isPro && !proUnlock.isPro {
+            selectedTheme = .warmGray
         }
     }
 

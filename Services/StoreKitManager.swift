@@ -14,7 +14,7 @@ class StoreKitManager: ObservableObject {
     @Published var isPurchasing = false
     @Published var purchaseError: String?
 
-    private let proProductID = "com.nousresearch.timeshadow.pro"
+    private let proProductID = "com.steveafrost.TimeShadow.pro"
 
     private var updates: Task<Void, Never>?
 

@@ -18,3 +18,6 @@ Package.resolved
 .env
 .env.local
 *.xcconfig
+
+## Build outputs
+build/
