@@ -10,10 +10,12 @@
 		01F73B85841049317A55C0B2 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D3FBCF29018AC5CB0484B0 /* NotificationService.swift */; };
 		11B908935B7BDEF134D6266F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DE524A91E11D67EEDCE313 /* ContentView.swift */; };
 		1376A5BC91D83A98FB3EF668 /* TimeShadowApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A887D511D68C2BE307089DF /* TimeShadowApp.swift */; };
+		23066E522905956DC56FA3A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C7FF4EAFBBFA78700ECDAA5 /* LaunchScreen.storyboard */; };
 		232F1DD03E7C7D68EE137D63 /* TimeShadowWidgets.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5A1174C2A5FB042FCA0E0C37 /* TimeShadowWidgets.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		23C5A1068DD274290EB655A6 /* TimerPreset.swift in Sources */ = {isa = PBXBuildFile; fileRef = A476123055AF6DD4F8376DAC /* TimerPreset.swift */; };
 		32CB9FA951DC3AB001547030 /* PresetPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50079CBB72DCFDB6143AF467 /* PresetPickerView.swift */; };
 		34720FA1771585BDFD9B0480 /* LiveActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44606EC4A801C1E0D963AC1F /* LiveActivityManager.swift */; };
+		3B49E9D032D718B67D31CB8E /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 634A43DE923D5F40616265A1 /* PrivacyInfo.xcprivacy */; };
 		4163A34BE5CA417453E552F5 /* TimerEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1F9FED9A8C9D95FC239C52 /* TimerEngine.swift */; };
 		418AC548CE58D0001C9D2445 /* WidgetDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BF13E1BBFA701BBC66D462 /* WidgetDataProvider.swift */; };
 		44E28BE543CECAA639ECEB05 /* ProUnlockManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766E630333FA2477A30DE8D2 /* ProUnlockManager.swift */; };
@@ -27,7 +29,9 @@
 		7121B91925E6938E6A640D64 /* StartTimerIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C8B9D2C00C584824FE3FB1 /* StartTimerIntent.swift */; };
 		78FD1A2941DFB2CA853402F7 /* StoreKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3031ABFE0A9ECCF170249DB7 /* StoreKitManager.swift */; };
 		7D2D86749A3C367F4A8B6264 /* CompletionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273D87AC8228CD43FB707FD3 /* CompletionView.swift */; };
+		80D593D4AA2682F3F013CF60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50C5EC61D5C64C7B1D095D28 /* Assets.xcassets */; };
 		815E797293236C9F365DF331 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CEBF421C5CCA9BEC1FC054E /* AppSettings.swift */; };
+		843348B6F9EBE73BEBB2C53A /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 634A43DE923D5F40616265A1 /* PrivacyInfo.xcprivacy */; };
 		8D16597ECA0423805764ECB4 /* TimerWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4380754DA34218BF9CA6B16 /* TimerWidget.swift */; };
 		91C4C5E2F6B263CC48CBF92F /* TimerSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7391999CADC6FB41C1F48A3 /* TimerSetupView.swift */; };
 		A7D0338AB255FB1251CB4522 /* TimerWidgetAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C648CEAB9C4FC855CBCB0E7B /* TimerWidgetAttributes.swift */; };
@@ -70,6 +74,7 @@
 		00BC1CE1BF6396AB4821F4E0 /* ShadowRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowRenderer.swift; sourceTree = "<group>"; };
 		06AEBEDCE08E52EAC809E174 /* ThemePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemePickerView.swift; sourceTree = "<group>"; };
 		0CEBF421C5CCA9BEC1FC054E /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		1C7FF4EAFBBFA78700ECDAA5 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		257CBCA863417B32FFFABE3A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		273D87AC8228CD43FB707FD3 /* CompletionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletionView.swift; sourceTree = "<group>"; };
 		2833E0020F7692F522E7E75A /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
@@ -82,8 +87,10 @@
 		4A887D511D68C2BE307089DF /* TimeShadowApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeShadowApp.swift; sourceTree = "<group>"; };
 		4FF86F43D3BDDCAD6ECA3520 /* ActiveTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveTimerView.swift; sourceTree = "<group>"; };
 		50079CBB72DCFDB6143AF467 /* PresetPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetPickerView.swift; sourceTree = "<group>"; };
+		50C5EC61D5C64C7B1D095D28 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		576A4A01E0534EF21316D049 /* TimerSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerSession.swift; sourceTree = "<group>"; };
 		5A1174C2A5FB042FCA0E0C37 /* TimeShadowWidgets.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = TimeShadowWidgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		634A43DE923D5F40616265A1 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		63F3CD20CC7B0492036F4C20 /* AnalyticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsService.swift; sourceTree = "<group>"; };
 		6F4ADEEB2B5FE4F32F86A1D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		766E630333FA2477A30DE8D2 /* ProUnlockManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProUnlockManager.swift; sourceTree = "<group>"; };
@@ -120,6 +127,7 @@
 				1F1D249CDEA393EEE7B3D8C5 /* App */,
 				FD9EB871889BC1E5047A70E6 /* Intents */,
 				0C6B4B526030177D21D1640E /* Models */,
+				4DCCA4CB77EC3F03C82D73F7 /* Resources */,
 				1FD2A1E52B12BC114597CF12 /* Services */,
 				F73D671AE27F41B1C0DE05B7 /* Views */,
 				70B77A7786A0F5DB044F0219 /* Widgets */,
@@ -150,6 +158,16 @@
 				D8BF13E1BBFA701BBC66D462 /* WidgetDataProvider.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		4DCCA4CB77EC3F03C82D73F7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				50C5EC61D5C64C7B1D095D28 /* Assets.xcassets */,
+				1C7FF4EAFBBFA78700ECDAA5 /* LaunchScreen.storyboard */,
+				634A43DE923D5F40616265A1 /* PrivacyInfo.xcprivacy */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		70B77A7786A0F5DB044F0219 /* Widgets */ = {
@@ -204,6 +222,7 @@
 			buildConfigurationList = B26D5439035E2401DE9B750F /* Build configuration list for PBXNativeTarget "TimeShadow" */;
 			buildPhases = (
 				731B0106B97C19D55DABF2DB /* Sources */,
+				BF90C88D9B1A24923A8CEAA0 /* Resources */,
 				F8AC5F39D48D18384B87E711 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
@@ -223,6 +242,7 @@
 			buildConfigurationList = 7CF7B48F95E67C66445D3D5E /* Build configuration list for PBXNativeTarget "TimeShadowWidgets" */;
 			buildPhases = (
 				BD0ADFB8A5520B9D93ACA785 /* Sources */,
+				4D0489FD02666DDD2B8716E3 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -273,6 +293,27 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4D0489FD02666DDD2B8716E3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B49E9D032D718B67D31CB8E /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF90C88D9B1A24923A8CEAA0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80D593D4AA2682F3F013CF60 /* Assets.xcassets in Resources */,
+				23066E522905956DC56FA3A2 /* LaunchScreen.storyboard in Resources */,
+				843348B6F9EBE73BEBB2C53A /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		731B0106B97C19D55DABF2DB /* Sources */ = {

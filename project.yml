@@ -26,7 +26,6 @@ targets:
       - path: Models
       - path: Services
       - path: Views
-    resources:
       - path: Resources/Assets.xcassets
       - path: Resources/LaunchScreen.storyboard
       - path: Resources/PrivacyInfo.xcprivacy
@@ -52,7 +51,6 @@ targets:
       - path: Models/ShadowTheme.swift
       - path: Models/TimerWidgetAttributes.swift
       - path: Services/WidgetDataProvider.swift
-    resources:
       - path: Resources/PrivacyInfo.xcprivacy
     settings:
       base:
